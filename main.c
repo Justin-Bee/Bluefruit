@@ -60,9 +60,11 @@ Purpose : Generic application start
 *   Application entry point.
 */
 void main(void) {
-  int i;
-  
 
+  /* initialize the uart */
+  uart_init();
+
+  int i;
   for (i = 0; i < 100; i++) {
     printf("Hello Parker, I am your father %d!\n", i);
   }

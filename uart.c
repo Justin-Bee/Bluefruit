@@ -9,7 +9,8 @@
  #include uart.h
 
  /* defines */
- // #define ??? (*(volatile char *) ????)
+  #define ENABLE (*(volatile char *) 0x500)
+  #define BAUDRATE (*(volatile char *) 0x524)
 
  /*
   * uart_init()
@@ -17,6 +18,11 @@
   * This function initializes the uart
   */
  void uart_init(){
+    /* enable the uart by setting 4 to register */
+    ENABLE |= 0x04;
+    /* set the baudrate to 115200 */
+    BAUDRATE |= 0x01D7E000;
+
 
  }
 
