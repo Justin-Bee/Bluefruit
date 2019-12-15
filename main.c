@@ -50,6 +50,8 @@ Purpose : Generic application start
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "uart.h"
+
 /*********************************************************************
 *
 *       main()
@@ -59,6 +61,7 @@ Purpose : Generic application start
 */
 void main(void) {
   int i;
+  
 
   for (i = 0; i < 100; i++) {
     printf("Hello Parker, I am your father %d!\n", i);
