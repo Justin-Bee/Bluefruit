@@ -63,6 +63,9 @@ void main(void) {
 
   /* initialize the uart */
   uart_init();
+  uart_writestr("test");
+
+  
 
   int i;
   for (i = 0; i < 100; i++) {
