@@ -3,3 +3,4 @@
 ## Project Info
 Embedded C project for nrf52832
 Adafruit Bluefruit Feather nrf52382
+Arm M4F
