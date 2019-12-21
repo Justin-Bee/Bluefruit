@@ -51,6 +51,7 @@ Purpose : Generic application start
 #include <stdlib.h>
 
 #include "uart.h"
+#include "led.h"
 
 /*********************************************************************
 *
@@ -63,17 +64,28 @@ void main(void) {
 
   /* initialize the uart */
   uart_init();
+  /* initialize the led */
+  led_init();
   uart_writestr("test");
 
-  
+  /* for simple timer*/
+  long volatile tmo;
+  /* endless loop */
+  while (1){
+    
+    /* blink the leds */
+    tmo = 10000000;
+    while(tmo >0){
+      led_on();
+      tmo--;
+      }
+    tmo = 10000000;
+    while(tmo >0){
+      led_off();
+      tmo--;
+      }
 
-  int i;
-  for (i = 0; i < 100; i++) {
-    printf("Hello Parker, I am your father %d!\n", i);
   }
-  do {
-    i++;
-  } while (1);
 }
 
 /*************************** End of file ****************************/
