@@ -27,15 +27,17 @@
   * This function initializes the uart
   */
  void uart_init(){
+    /* to enable the UART need to disable other porcesses with same ID - Instantiation Table pg 24. */
+    uart->ENABLE = 0;
+    /* enable the uart by setting 8 to register */
+    myUart->ENABLE |= 0x08;
     /* set the pinselect to the uart pin */
     myUart->PSEL.TXD = UARTTX;
     myUart->PSEL.RXD = UARTRX;
     myUart->PSEL.CTS = UARTCTS;
     myUart->PSEL.RTS = UARTRTS;
-    /* to enable the UART need to disable other porcesses with same ID - Instantiation Table pg 24. */
-    uart->ENABLE = 0;
-    /* enable the uart by setting 8 to register */
-    myUart->ENABLE |= 0x08;
+    /* config the parity */
+    myUart->CONFIG = 0;
     /* set the baudrate to 115200 */
     myUart->BAUDRATE |= 0x01D60000;
 

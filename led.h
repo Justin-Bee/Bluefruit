@@ -14,10 +14,16 @@
  /* led_init() */
  void led_init();
 
- /* led_on() */
- void led_on();
+ /* led_on_red() */
+ void led_on_red();
 
-/* led_off() */
-void led_off();
+/* led_off_red() */
+void led_off_red();
+
+/* led_on_blue() */
+void led_on_blue();
+
+/* led_off_blue() */
+void led_off_blue();
 
  #endif /* _LED_H */
