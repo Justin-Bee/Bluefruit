@@ -74,12 +74,12 @@ void main(void) {
   while (1){
     
     /* blink the leds */
-    tmo = 10000000;
+    tmo = 1000000;
     while(tmo >0){
       led_on();
       tmo--;
       }
-    tmo = 10000000;
+    tmo = 1000000;
     while(tmo >0){
       led_off();
       tmo--;
