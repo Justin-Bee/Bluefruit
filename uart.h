@@ -15,7 +15,7 @@
  void uart_init();
 
  /* uart_writestr() */
- void uart_writestr(char * str);
+ void uart_writechar(char str);
 
  #endif /* _UART_H */
 

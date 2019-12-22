@@ -66,13 +66,12 @@ void main(void) {
   uart_init();
   /* initialize the led */
   led_init();
-  uart_writestr("test");
 
+  uart_writechar('z');
   /* for simple timer*/
   long volatile tmo;
   /* endless loop */
   while (1){
-    
     /* blink the leds */
     tmo = 1000000;
     while(tmo >0){

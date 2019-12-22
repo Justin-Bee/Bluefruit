@@ -10,16 +10,19 @@
  #include "uart.h"
  #include "nrf52.h"
  #include "nrf.h"
+ #include <stdio.h>
 
 /* variable for the uart enum referenced in nrf52.h */
- NRF_UARTE_Type * myUart; 
- NRF_UART_Type * uart;
+NRF_UARTE_Type * myUart = 0x40002000; 
+NRF_UART_Type * uart = 0x40002000;
+
+
 
 /* definitions */
-#define UARTRX 8 //8 or 29
-#define UARTTX 6  //6 or 31
-#define UARTCTS 7  //7 or 28
-#define UARTRTS 5  //5 or 30
+#define UARTRX 8UL //8 or 29
+#define UARTTX 6UL  //6 or 31
+#define UARTCTS 7UL  //7 or 28
+#define UARTRTS 5UL  //5 or 30
 
  /*
   * uart_init()
@@ -27,19 +30,20 @@
   * This function initializes the uart
   */
  void uart_init(){
+
     /* to enable the UART need to disable other porcesses with same ID - Instantiation Table pg 24. */
-    uart->ENABLE = 0;
-    /* enable the uart by setting 8 to register */
-    myUart->ENABLE |= 0x08;
+    myUart->ENABLE = 0;
+    /* enable the UART by setting 4 to enable*/
+    uart->ENABLE = 4;
     /* set the pinselect to the uart pin */
-    myUart->PSEL.TXD = UARTTX;
-    myUart->PSEL.RXD = UARTRX;
-    myUart->PSEL.CTS = UARTCTS;
-    myUart->PSEL.RTS = UARTRTS;
+    uart->PSELTXD = UARTTX;
+    uart->PSELRXD = UARTRX;
+    uart->PSELCTS = UARTCTS;
+    uart->PSELRTS = UARTRTS;
     /* config the parity */
-    myUart->CONFIG = 0;
+    uart->CONFIG = 0;
     /* set the baudrate to 115200 */
-    myUart->BAUDRATE |= 0x01D60000;
+    uart->BAUDRATE = 0x01D7E000;
 
 
  }
@@ -49,15 +53,11 @@
  * 
  * This function prints a str to uart 
  */
-void uart_writestr(char * str){
-    /* write the intial address pointer to TXD.PTR */
-    myUart->TXD.PTR = *str;
-    /* and the number of bytes in the RAM buffer to TXD.MAXCNT */
-    myUart->TXD.MAXCNT = sizeof(str);
-    /* tranmission is started by triggering the STARTTX task */
-    myUart->TASKS_STARTTX = 1;
-    /* bytes are transmitted by writing to the TXD register */
+void uart_writechar(char str){
 
-    /*  */
-
+    uart->TASKS_STARTTX=1;
+    if(uart->EVENTS_CTS){
+      uart->TXD = str;
+    }
+    
 }
