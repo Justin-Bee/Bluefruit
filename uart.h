@@ -20,5 +20,8 @@
  /* uart_writestr() */
  void uart_writestr(char * str);
 
+ /* uart_getstr() */
+ unsigned char * uart_getstr();
+
  #endif /* _UART_H */
 

@@ -66,8 +66,8 @@ void main(void) {
   uart_init();
   /* initialize the led */
   led_init();
-
-  uart_writechar('z');
+  unsigned char * msg = "testing\r\n";
+  uart_writestr(msg);
   /* for simple timer*/
   long volatile tmo;
   /* endless loop */
@@ -85,6 +85,7 @@ void main(void) {
       led_on_blue();
       tmo--;
       }
+    uart_getstr();
 
   }
 }
