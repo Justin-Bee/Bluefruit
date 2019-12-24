@@ -14,8 +14,11 @@
  /* uart_init() */
  void uart_init();
 
- /* uart_writestr() */
+ /* uart_writechar() */
  void uart_writechar(char str);
+
+ /* uart_writestr() */
+ void uart_writestr(char * str);
 
  #endif /* _UART_H */
 
