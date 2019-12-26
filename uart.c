@@ -15,7 +15,7 @@
 
 /* variable for the uart enum referenced in nrf52.h */
 //NRF_UARTE_Type * myUart = 0x40002000; 
-NRF_UART_Type * uart = 0x40002000;
+NRF_UART_Type * uart;// = 0x40002000;
 
 
 
@@ -33,7 +33,7 @@ NRF_UART_Type * uart = 0x40002000;
  void uart_init(){
 
     /* to enable the UART need to disable other porcesses with same ID - Instantiation Table pg 24. */
-    uart->ENABLE = 0;
+   // uart->ENABLE = 0;
     /* enable the UART by setting 4 to enable*/
     uart->ENABLE = 4;
 
@@ -41,14 +41,14 @@ NRF_UART_Type * uart = 0x40002000;
     uart->INTENSET = 0;
     uart->INTENCLR = 0;
     /* set the pinselect to the uart pin */
-    uart->PSELTXD = UARTTX;
-    uart->PSELRXD = UARTRX;
-    uart->PSELCTS = UARTCTS;
-    uart->PSELRTS = UARTRTS;
+  //  uart->PSELTXD = UARTTX;
+  //  uart->PSELRXD = UARTRX;
+  //  uart->PSELCTS = UARTCTS;
+ //   uart->PSELRTS = UARTRTS;
     /* config the parity */
-    uart->CONFIG = 0;
+   // uart->CONFIG = 0x07;
     /* set the baudrate to 115200 */
-   // uart->BAUDRATE = 0x01D7E000UL;
+    //uart->BAUDRATE = 0x01D7E000UL;
     uart->BAUDRATE = 0x00275000UL; //9600 baud 
  }
 
@@ -63,6 +63,7 @@ void uart_writechar(char str){
     uart->TXD = str; 
     while(!uart->EVENTS_TXDRDY){}
    // while(!uart->EVENTS_CTS){}
+   uart->TASKS_STARTTX;
 
 }
 
@@ -83,7 +84,7 @@ void uart_writechar(char str){
       uart_writechar(str[i]); 
     }
     /* stop the transmission */
-    uart->TASKS_STOPTX;
+   // uart->TASKS_STOPTX;
  }
 
 

@@ -61,6 +61,8 @@
       <file file_name="uart.h" />
       <file file_name="led.c" />
       <file file_name="led.h" />
+      <file file_name="clock.c" />
+      <file file_name="clock.h" />
     </folder>
     <folder Name="System Files">
       <file file_name="thumb_crt0.s" />

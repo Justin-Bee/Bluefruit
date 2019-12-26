@@ -52,6 +52,7 @@ Purpose : Generic application start
 
 #include "uart.h"
 #include "led.h"
+#include "clock.h"
 
 /*********************************************************************
 *
@@ -61,13 +62,14 @@ Purpose : Generic application start
 *   Application entry point.
 */
 void main(void) {
-
+  /* initialize the clock */
+  clock_init();
   /* initialize the uart */
   uart_init();
   /* initialize the led */
   led_init();
+
   unsigned char * msg = "testing\r\n";
-  uart_writestr(msg);
   /* for simple timer*/
   long volatile tmo;
   /* endless loop */
@@ -85,7 +87,8 @@ void main(void) {
       led_on_blue();
       tmo--;
       }
-    uart_getstr();
+   // uart_getstr();
+    uart_writestr(msg);
 
   }
 }
