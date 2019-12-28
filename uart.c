@@ -99,9 +99,17 @@ void uart_writechar(char str){
   * this function gets the str from the uart 
   */
  unsigned char * uart_getstr(){
+    /* buffer for the message */
     unsigned char * msg;
+    /* trigger the receive message event */
     uart->TASKS_STARTRX;
-    msg = uart->RXD;
+    /* process until ENTER pressed */
+    while(uart->RXD!='\n'){
+      /* wait till there is a message in the FIFO */
+      while(!uart->EVENTS_RXDRDY){}
+      /* store the byte in the buffer for later use */
+      msg = uart->RXD;
+    }
     return msg;
 
  }
