@@ -124,14 +124,18 @@ Discarded input sections
  .text          0x0000000000000000        0x0 Output/Bluefruit Release/Obj/uart.o
  .data          0x0000000000000000        0x0 Output/Bluefruit Release/Obj/uart.o
  .bss           0x0000000000000000        0x0 Output/Bluefruit Release/Obj/uart.o
- .text.uart_getstr
-                0x0000000000000000       0x10 Output/Bluefruit Release/Obj/uart.o
  .text          0x0000000000000000        0x0 Output/Bluefruit Release/Obj/led.o
  .data          0x0000000000000000        0x0 Output/Bluefruit Release/Obj/led.o
  .bss           0x0000000000000000        0x0 Output/Bluefruit Release/Obj/led.o
  .text          0x0000000000000000        0x0 Output/Bluefruit Release/Obj/clock.o
  .data          0x0000000000000000        0x0 Output/Bluefruit Release/Obj/clock.o
  .bss           0x0000000000000000        0x0 Output/Bluefruit Release/Obj/clock.o
+ .text          0x0000000000000000        0x0 Output/Bluefruit Release/Obj/config.o
+ .data          0x0000000000000000        0x0 Output/Bluefruit Release/Obj/config.o
+ .bss           0x0000000000000000        0x0 Output/Bluefruit Release/Obj/config.o
+ .comment       0x0000000000000000       0x44 Output/Bluefruit Release/Obj/config.o
+ .ARM.attributes
+                0x0000000000000000       0x39 Output/Bluefruit Release/Obj/config.o
  .text          0x0000000000000000        0x0 Output/Bluefruit Release/Obj/thumb_crt0.o
  .data          0x0000000000000000        0x0 Output/Bluefruit Release/Obj/thumb_crt0.o
  .bss           0x0000000000000000        0x0 Output/Bluefruit Release/Obj/thumb_crt0.o
@@ -2521,46 +2525,49 @@ Linker script and memory map
                 0x0000000000000001                . = ASSERT (((__init_rodata_start__ == __init_rodata_end__) || ((__init_rodata_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .init_rodata is too large to fit in FLASH memory segment)
                 0x0000000000000634                __text_load_start__ = ALIGN (__init_rodata_end__, 0x4)
 
-.text           0x0000000000000634      0x1a8
+.text           0x0000000000000634      0x1d8
                 0x0000000000000634                __text_start__ = .
  *(.text .text.* .glue_7t .glue_7 .gnu.linkonce.t.* .gcc_except_table .ARM.extab* .gnu.linkonce.armextab.*)
  .glue_7        0x0000000000000634        0x0 linker stubs
  .glue_7t       0x0000000000000634        0x0 linker stubs
- .text.main     0x0000000000000634       0x60 Output/Bluefruit Release/Obj/main.o
+ .text.main     0x0000000000000634       0x64 Output/Bluefruit Release/Obj/main.o
                 0x0000000000000634                main
  .text.uart_init
-                0x0000000000000694       0x40 Output/Bluefruit Release/Obj/uart.o
-                0x0000000000000694                uart_init
+                0x0000000000000698       0x40 Output/Bluefruit Release/Obj/uart.o
+                0x0000000000000698                uart_init
  .text.uart_writechar
-                0x00000000000006d4       0x14 Output/Bluefruit Release/Obj/uart.o
-                0x00000000000006d4                uart_writechar
+                0x00000000000006d8       0x14 Output/Bluefruit Release/Obj/uart.o
+                0x00000000000006d8                uart_writechar
  .text.uart_writestr
-                0x00000000000006e8       0x3c Output/Bluefruit Release/Obj/uart.o
-                0x00000000000006e8                uart_writestr
+                0x00000000000006ec       0x3c Output/Bluefruit Release/Obj/uart.o
+                0x00000000000006ec                uart_writestr
+ .text.uart_getstr
+                0x0000000000000728       0x2c Output/Bluefruit Release/Obj/uart.o
+                0x0000000000000728                uart_getstr
  .text.led_init
-                0x0000000000000724       0x10 Output/Bluefruit Release/Obj/led.o
-                0x0000000000000724                led_init
+                0x0000000000000754       0x10 Output/Bluefruit Release/Obj/led.o
+                0x0000000000000754                led_init
  .text.led_on_red
-                0x0000000000000734        0xe Output/Bluefruit Release/Obj/led.o
-                0x0000000000000734                led_on_red
+                0x0000000000000764        0xe Output/Bluefruit Release/Obj/led.o
+                0x0000000000000764                led_on_red
  .text.led_off_red
-                0x0000000000000742        0xe Output/Bluefruit Release/Obj/led.o
-                0x0000000000000742                led_off_red
+                0x0000000000000772        0xe Output/Bluefruit Release/Obj/led.o
+                0x0000000000000772                led_off_red
  .text.led_on_blue
-                0x0000000000000750        0xe Output/Bluefruit Release/Obj/led.o
-                0x0000000000000750                led_on_blue
+                0x0000000000000780        0xe Output/Bluefruit Release/Obj/led.o
+                0x0000000000000780                led_on_blue
  .text.led_off_blue
-                0x000000000000075e        0xe Output/Bluefruit Release/Obj/led.o
-                0x000000000000075e                led_off_blue
+                0x000000000000078e        0xe Output/Bluefruit Release/Obj/led.o
+                0x000000000000078e                led_off_blue
  .text.clock_init
-                0x000000000000076c       0x10 Output/Bluefruit Release/Obj/clock.o
-                0x000000000000076c                clock_init
+                0x000000000000079c       0x10 Output/Bluefruit Release/Obj/clock.o
+                0x000000000000079c                clock_init
  .text.libc.strlen
-                0x000000000000077c       0x60 /usr/share/segger_embedded_studio_for_arm_4.30c/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
-                0x000000000000077c                strlen
-                0x00000000000007dc                __text_end__ = (__text_start__ + SIZEOF (.text))
-                0x00000000000001a8                __text_size__ = SIZEOF (.text)
-                0x00000000000007dc                __text_load_end__ = __text_end__
+                0x00000000000007ac       0x60 /usr/share/segger_embedded_studio_for_arm_4.30c/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a(libc2_asm.o)
+                0x00000000000007ac                strlen
+                0x000000000000080c                __text_end__ = (__text_start__ + SIZEOF (.text))
+                0x00000000000001d8                __text_size__ = SIZEOF (.text)
+                0x000000000000080c                __text_load_end__ = __text_end__
 
 .vfp11_veneer   0x0000000100000000        0x0
  .vfp11_veneer  0x0000000100000000        0x0 linker stubs
@@ -2571,64 +2578,64 @@ Linker script and memory map
 .iplt           0x0000000100000000        0x0
  .iplt          0x0000000100000000        0x0 Output/Bluefruit Release/Obj/system_nrf52.o
                 0x0000000000000001                . = ASSERT (((__text_start__ == __text_end__) || ((__text_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .text is too large to fit in FLASH memory segment)
-                0x00000000000007dc                __dtors_load_start__ = ALIGN (__text_end__, 0x4)
+                0x000000000000080c                __dtors_load_start__ = ALIGN (__text_end__, 0x4)
 
-.dtors          0x00000000000007dc        0x0
-                0x00000000000007dc                __dtors_start__ = .
+.dtors          0x000000000000080c        0x0
+                0x000000000000080c                __dtors_start__ = .
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.fini_array)
  *(SORT_BY_NAME(.fini_array.*))
-                0x00000000000007dc                __dtors_end__ = (__dtors_start__ + SIZEOF (.dtors))
+                0x000000000000080c                __dtors_end__ = (__dtors_start__ + SIZEOF (.dtors))
                 0x0000000000000000                __dtors_size__ = SIZEOF (.dtors)
-                0x00000000000007dc                __dtors_load_end__ = __dtors_end__
+                0x000000000000080c                __dtors_load_end__ = __dtors_end__
                 0x0000000000000001                . = ASSERT (((__dtors_start__ == __dtors_end__) || ((__dtors_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .dtors is too large to fit in FLASH memory segment)
-                0x00000000000007dc                __ctors_load_start__ = ALIGN (__dtors_end__, 0x4)
+                0x000000000000080c                __ctors_load_start__ = ALIGN (__dtors_end__, 0x4)
 
-.ctors          0x00000000000007dc        0x0
-                0x00000000000007dc                __ctors_start__ = .
+.ctors          0x000000000000080c        0x0
+                0x000000000000080c                __ctors_start__ = .
  *(SORT_BY_NAME(.ctors.*))
  *(.ctors)
  *(.init_array)
  *(SORT_BY_NAME(.init_array.*))
-                0x00000000000007dc                __ctors_end__ = (__ctors_start__ + SIZEOF (.ctors))
+                0x000000000000080c                __ctors_end__ = (__ctors_start__ + SIZEOF (.ctors))
                 0x0000000000000000                __ctors_size__ = SIZEOF (.ctors)
-                0x00000000000007dc                __ctors_load_end__ = __ctors_end__
+                0x000000000000080c                __ctors_load_end__ = __ctors_end__
                 0x0000000000000001                . = ASSERT (((__ctors_start__ == __ctors_end__) || ((__ctors_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .ctors is too large to fit in FLASH memory segment)
-                0x00000000000007dc                __rodata_load_start__ = ALIGN (__ctors_end__, 0x4)
+                0x000000000000080c                __rodata_load_start__ = ALIGN (__ctors_end__, 0x4)
 
-.rodata         0x00000000000007dc        0xc
-                0x00000000000007dc                __rodata_start__ = .
+.rodata         0x000000000000080c        0xc
+                0x000000000000080c                __rodata_start__ = .
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.main.str1.4
-                0x00000000000007dc        0xc Output/Bluefruit Release/Obj/main.o
+                0x000000000000080c        0xc Output/Bluefruit Release/Obj/main.o
                                           0xa (size before relaxing)
-                0x00000000000007e8                __rodata_end__ = (__rodata_start__ + SIZEOF (.rodata))
+                0x0000000000000818                __rodata_end__ = (__rodata_start__ + SIZEOF (.rodata))
                 0x000000000000000c                __rodata_size__ = SIZEOF (.rodata)
-                0x00000000000007e8                __rodata_load_end__ = __rodata_end__
+                0x0000000000000818                __rodata_load_end__ = __rodata_end__
 
 .rel.dyn        0x0000000000000000        0x0
  .rel.iplt      0x0000000000000000        0x0 Output/Bluefruit Release/Obj/system_nrf52.o
                 0x0000000000000001                . = ASSERT (((__rodata_start__ == __rodata_end__) || ((__rodata_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .rodata is too large to fit in FLASH memory segment)
-                0x00000000000007e8                __ARM.exidx_load_start__ = ALIGN (__rodata_end__, 0x4)
+                0x0000000000000818                __ARM.exidx_load_start__ = ALIGN (__rodata_end__, 0x4)
 
-.ARM.exidx      0x00000000000007e8        0x0
-                0x00000000000007e8                __ARM.exidx_start__ = .
-                0x00000000000007e8                __exidx_start = __ARM.exidx_start__
+.ARM.exidx      0x0000000000000818        0x0
+                0x0000000000000818                __ARM.exidx_start__ = .
+                0x0000000000000818                __exidx_start = __ARM.exidx_start__
  *(.ARM.exidx .ARM.exidx.*)
-                0x00000000000007e8                __ARM.exidx_end__ = (__ARM.exidx_start__ + SIZEOF (.ARM.exidx))
+                0x0000000000000818                __ARM.exidx_end__ = (__ARM.exidx_start__ + SIZEOF (.ARM.exidx))
                 0x0000000000000000                __ARM.exidx_size__ = SIZEOF (.ARM.exidx)
-                0x00000000000007e8                __exidx_end = __ARM.exidx_end__
-                0x00000000000007e8                __ARM.exidx_load_end__ = __ARM.exidx_end__
+                0x0000000000000818                __exidx_end = __ARM.exidx_end__
+                0x0000000000000818                __ARM.exidx_load_end__ = __ARM.exidx_end__
                 0x0000000000000001                . = ASSERT (((__ARM.exidx_start__ == __ARM.exidx_end__) || ((__ARM.exidx_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .ARM.exidx is too large to fit in FLASH memory segment)
-                0x00000000000007e8                __fast_load_start__ = ALIGN (__ARM.exidx_end__, 0x4)
+                0x0000000000000818                __fast_load_start__ = ALIGN (__ARM.exidx_end__, 0x4)
 
-.fast           0x0000000020000000        0x0 load address 0x00000000000007e8
+.fast           0x0000000020000000        0x0 load address 0x0000000000000818
                 0x0000000020000000                __fast_start__ = .
  *(.fast .fast.*)
                 0x0000000020000000                __fast_end__ = (__fast_start__ + SIZEOF (.fast))
                 0x0000000000000000                __fast_size__ = SIZEOF (.fast)
-                0x00000000000007e8                __fast_load_end__ = (__fast_load_start__ + SIZEOF (.fast))
+                0x0000000000000818                __fast_load_end__ = (__fast_load_start__ + SIZEOF (.fast))
                 0x0000000000000001                . = ASSERT (((__fast_load_start__ == __fast_load_end__) || ((__fast_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .fast is too large to fit in FLASH memory segment)
 
 .fast_run       0x0000000020000000        0x0
@@ -2638,9 +2645,9 @@ Linker script and memory map
                 0x0000000000000000                __fast_run_size__ = SIZEOF (.fast_run)
                 0x0000000020000000                __fast_run_load_end__ = __fast_run_end__
                 0x0000000000000001                . = ASSERT (((__fast_run_start__ == __fast_run_end__) || ((__fast_run_end__ - __RAM_segment_start__) <= __RAM_segment_size__)), error: .fast_run is too large to fit in RAM memory segment)
-                0x00000000000007e8                __data_load_start__ = ALIGN ((__fast_load_start__ + SIZEOF (.fast)), 0x4)
+                0x0000000000000818                __data_load_start__ = ALIGN ((__fast_load_start__ + SIZEOF (.fast)), 0x4)
 
-.data           0x0000000020000000        0xc load address 0x00000000000007e8
+.data           0x0000000020000000        0xc load address 0x0000000000000818
                 0x0000000020000000                __data_start__ = .
  *(.data .data.* .gnu.linkonce.d.*)
  .data.SystemCoreClock
@@ -2652,13 +2659,13 @@ Linker script and memory map
                 0x0000000020000008                CLOCK
                 0x000000002000000c                __data_end__ = (__data_start__ + SIZEOF (.data))
                 0x000000000000000c                __data_size__ = SIZEOF (.data)
-                0x00000000000007f4                __data_load_end__ = (__data_load_start__ + SIZEOF (.data))
+                0x0000000000000824                __data_load_end__ = (__data_load_start__ + SIZEOF (.data))
 
 .igot.plt       0x0000000100000000        0x0
  .igot.plt      0x0000000100000000        0x0 Output/Bluefruit Release/Obj/system_nrf52.o
                 0x0000000000000001                . = ASSERT (((__data_load_start__ == __data_load_end__) || ((__data_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .data is too large to fit in FLASH memory segment)
 
-.data_run       0x0000000020000000        0xc load address 0x00000000000007e8
+.data_run       0x0000000020000000        0xc load address 0x0000000000000818
                 0x0000000020000000                __data_run_start__ = .
                 0x000000002000000c                . = MAX ((__data_run_start__ + SIZEOF (.data)), .)
  *fill*         0x0000000020000000        0xc 
@@ -2685,16 +2692,16 @@ Linker script and memory map
                 0x0000000000000000                __tbss_size__ = SIZEOF (.tbss)
                 0x000000002000000c                __tbss_load_end__ = __tbss_end__
                 0x0000000000000001                . = ASSERT (((__tbss_start__ == __tbss_end__) || ((__tbss_end__ - __RAM_segment_start__) <= __RAM_segment_size__)), error: .tbss is too large to fit in RAM memory segment)
-                0x00000000000007f4                __tdata_load_start__ = ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4)
+                0x0000000000000824                __tdata_load_start__ = ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4)
 
-.tdata          0x000000002000000c        0x0 load address 0x00000000000007f4
+.tdata          0x000000002000000c        0x0 load address 0x0000000000000824
                 0x000000002000000c                __tdata_start__ = .
  *(.tdata .tdata.*)
                 0x000000002000000c                __tdata_end__ = (__tdata_start__ + SIZEOF (.tdata))
                 0x0000000000000000                __tdata_size__ = SIZEOF (.tdata)
-                0x00000000000007f4                __tdata_load_end__ = (__tdata_load_start__ + SIZEOF (.tdata))
-                0x00000000000007f4                __FLASH_segment_used_end__ = (ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4) + SIZEOF (.tdata))
-                0x00000000000007f4                __FLASH_segment_used_size__ = (__FLASH_segment_used_end__ - __FLASH_segment_start__)
+                0x0000000000000824                __tdata_load_end__ = (__tdata_load_start__ + SIZEOF (.tdata))
+                0x0000000000000824                __FLASH_segment_used_end__ = (ALIGN ((__data_load_start__ + SIZEOF (.data)), 0x4) + SIZEOF (.tdata))
+                0x0000000000000824                __FLASH_segment_used_size__ = (__FLASH_segment_used_end__ - __FLASH_segment_start__)
                 0x0000000000000001                . = ASSERT (((__tdata_load_start__ == __tdata_load_end__) || ((__tdata_load_end__ - __FLASH_segment_start__) <= __FLASH_segment_size__)), error: .tdata is too large to fit in FLASH memory segment)
 
 .tdata_run      0x000000002000000c        0x0
@@ -2756,6 +2763,7 @@ LOAD Output/Bluefruit Release/Obj/main.o
 LOAD Output/Bluefruit Release/Obj/uart.o
 LOAD Output/Bluefruit Release/Obj/led.o
 LOAD Output/Bluefruit Release/Obj/clock.o
+LOAD Output/Bluefruit Release/Obj/config.o
 LOAD Output/Bluefruit Release/Obj/thumb_crt0.o
 LOAD Output/Bluefruit Release/Obj/ses_startup_nrf_common.o
 LOAD Output/Bluefruit Release/Obj/ses_startup_nrf52.o

@@ -8,8 +8,8 @@
  * the clock.c class
  */
 
- #ifndef _LED_H
- #define _LED_H
+ #ifndef _CLOCK_H
+ #define _CLOCK_H
 
 /* clock_init() */
 void clock_init();
@@ -17,4 +17,4 @@ void clock_init();
 
 
 
- #endif //_LED_H
+ #endif //_CLOCK_H

@@ -5,6 +5,7 @@
 "Output/Bluefruit Release/Obj/uart.o"
 "Output/Bluefruit Release/Obj/led.o"
 "Output/Bluefruit Release/Obj/clock.o"
+"Output/Bluefruit Release/Obj/config.o"
 "Output/Bluefruit Release/Obj/thumb_crt0.o"
 "Output/Bluefruit Release/Obj/ses_startup_nrf_common.o"
 "Output/Bluefruit Release/Obj/ses_startup_nrf52.o"

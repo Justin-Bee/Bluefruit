@@ -63,6 +63,8 @@
       <file file_name="led.h" />
       <file file_name="clock.c" />
       <file file_name="clock.h" />
+      <file file_name="config.c" />
+      <file file_name="config.h" />
     </folder>
     <folder Name="System Files">
       <file file_name="thumb_crt0.s" />
