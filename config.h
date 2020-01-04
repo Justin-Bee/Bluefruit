@@ -18,6 +18,9 @@ typedef struct{
 
 }config_struct;
 
+/* public struct */
+config_struct config;
+
 /* initialize the struct */
 void config_init();
 
