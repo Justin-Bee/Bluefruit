@@ -87,7 +87,9 @@ void main(void) {
       led_on_blue();
       tmo--;
       }
-    uart_getstr();
+
+    uart_writestr(msg);
+    msg = uart_getstr();
     uart_writestr(msg);
 
   }
