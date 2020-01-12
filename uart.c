@@ -25,6 +25,8 @@ NRF_UART_Type * uart = 0x40002000;
 #define UARTCTS (7UL)  //7 or 28
 #define UARTRTS (5UL)  //5 or 30
 
+/* variables */
+int received =0;
  /*
   * uart_init()
   *
@@ -70,11 +72,8 @@ void uart_writechar(char str){
  * it char by char calling uart_writechar() to write the chars 
  */
  void uart_writestr(char * str){
-    
-    
     /* get the length of the string entered */
     int length= strlen(str);
-  
     /* iterate through the chars */
     for(int i=0; i<=length; i++){
       /* write the current character */
@@ -87,9 +86,8 @@ void uart_writechar(char str){
       tmo--;
       }
       /* stop the transmission */
-      uart->TASKS_STOPTX;
+      uart->TASKS_STOPTX=1;
     }
-
  }
 
 
@@ -102,20 +100,36 @@ void uart_writechar(char str){
     /* buffer for the message */
     unsigned char * msg;
     /* trigger the receive message event */
-    uart->TASKS_STARTRX;
+    uart->TASKS_STARTRX=1;
     /* variable to increment */
     int i=0;
-    /* process until ENTER pressed */
-    while(uart->RXD!='\n'){
-      /* wait till there is a message in the FIFO */
-      while(!uart->EVENTS_RXDRDY){}
-      /* clear the RXDRDY bit */
-      uart->EVENTS_RXDRDY = 0;
-      /* store the byte in the buffer for later use */
-      msg[i] = uart->RXD;
-      /* increment the variable */
-      i++;
-    }
+
+    uart->EVENTS_RXDRDY = 1;
+    while(!uart->EVENTS_RXDRDY){}
+    /* store the first byte in the msg variable */
+    msg = "test";
+   
+
+    /* set received to 1 */
+    received = 1;
+    /* return the message */
     return msg;
 
+ }
+
+
+/*
+ * uart_msgReceived()
+ *
+ * Returns: 1 if msg received 0 otherwise
+ */
+ int uart_msgReceived(){
+   /* check the status of the msg received variable */
+   if(received){
+      received = 0;
+      return 1;
+   }
+   else{
+      return received;
+   }
  }

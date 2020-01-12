@@ -101,10 +101,13 @@ int main(void) {
       tmo--;
       }
 
-    //msg = uart_getstr();
+    msg = uart_getstr();
 
-   // uart_writestr("you entered: ");
-    //uart_writestr(msg);
+    /* if the msg has been received */
+    if(uart_msgReceived()){
+      uart_writestr("you entered: ");
+      uart_writestr(msg);
+    }
 
   }
 }

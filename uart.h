@@ -23,5 +23,8 @@
  /* uart_getstr() */
  unsigned char * uart_getstr();
 
+ /* uart_msgReceived() */
+ int uart_msgReceived();
+
  #endif /* _UART_H */
 
