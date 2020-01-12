@@ -55,7 +55,8 @@ Purpose : Generic application start
 #include "led.h"
 #include "clock.h"
 
-
+/* external varaibles */
+struct config_struct def;
 /*********************************************************************
 *
 *       main()
@@ -70,6 +71,8 @@ int main(void) {
   uart_init();
   /* initialize the led */
   led_init();
+  /* initialize the config */
+  config_init();
   
   /* for simple timer*/
   long volatile tmo;

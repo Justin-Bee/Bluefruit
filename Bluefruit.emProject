@@ -64,6 +64,7 @@
       <file file_name="clock.c" />
       <file file_name="clock.h" />
       <file file_name="config.h" />
+      <file file_name="config.c" />
     </folder>
     <folder Name="System Files">
       <file file_name="thumb_crt0.s" />

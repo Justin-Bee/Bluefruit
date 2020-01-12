@@ -11,13 +11,17 @@
 #ifndef _CONFIG_H_INCLUDED
 #define _CONFIG_H_INCLUDED
 
-/*define the banner message params */
-//variable declarations can cause multiple definition errors
+
+ /* config struct */
 struct config_struct{
     char name[20];
     char device[20];
-}def = {"Author: Justin Bee", "Device: nrf52832"};
+};
 
+extern struct config_struct def;
+
+/* config_init() */
+void config_init();
 
 
 #endif
