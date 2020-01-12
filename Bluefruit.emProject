@@ -63,7 +63,6 @@
       <file file_name="led.h" />
       <file file_name="clock.c" />
       <file file_name="clock.h" />
-      <file file_name="config.c" />
       <file file_name="config.h" />
     </folder>
     <folder Name="System Files">

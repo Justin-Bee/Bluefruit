@@ -8,23 +8,16 @@
  * the config.c class
  */
 
- #ifndef _CONFIG_H
- #define _CONFIG_H
+#ifndef _CONFIG_H_INCLUDED
+#define _CONFIG_H_INCLUDED
 
-/* the config struct */
-typedef struct{
-  char[5] name;
-    
-
-}config_struct;
-
-/* public struct */
-config_struct config;
-
-/* initialize the struct */
-void config_init();
+/*define the banner message params */
+//variable declarations can cause multiple definition errors
+struct config_struct{
+    char name[20];
+    char device[20];
+}def = {"Author: Justin Bee", "Device: nrf52832"};
 
 
 
-
- #endif //_CONFIG_H
+#endif

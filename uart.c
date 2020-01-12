@@ -103,12 +103,18 @@ void uart_writechar(char str){
     unsigned char * msg;
     /* trigger the receive message event */
     uart->TASKS_STARTRX;
+    /* variable to increment */
+    int i=0;
     /* process until ENTER pressed */
     while(uart->RXD!='\n'){
       /* wait till there is a message in the FIFO */
       while(!uart->EVENTS_RXDRDY){}
+      /* clear the RXDRDY bit */
+      uart->EVENTS_RXDRDY = 0;
       /* store the byte in the buffer for later use */
-      msg = uart->RXD;
+      msg[i] = uart->RXD;
+      /* increment the variable */
+      i++;
     }
     return msg;
 
