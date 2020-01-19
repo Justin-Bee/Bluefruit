@@ -16,6 +16,7 @@
 struct config_struct{
     char name[20];
     char device[20];
+    char version[7];
 };
 
 extern struct config_struct def;

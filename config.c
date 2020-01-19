@@ -18,7 +18,9 @@
  void config_init(){
    char * name = "Author: Justin Bee";
    char * device = "Device: nrf52832";
+   char * version = "1.00.01";           
    // def.name = *name;
    strcpy(def.name, name);
    strcpy(def.device, device);
+   strcpy(def.version, version);
  }
