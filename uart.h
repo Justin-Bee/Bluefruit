@@ -8,8 +8,8 @@
  * the uart.c class
  */
 
- #ifndef _UART_H
- #define _UART_H
+ #ifndef _UART_H_INCLUDED
+ #define _UART_H_INCLUDED
 
  /* uart_init() */
  void uart_init();
@@ -27,4 +27,7 @@
  int uart_msgReceived();
 
  #endif /* _UART_H */
+
+ 
+/*************************** End of file ****************************/
 

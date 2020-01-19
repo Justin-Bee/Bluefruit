@@ -8,8 +8,8 @@
  * the clock.c class
  */
 
- #ifndef _CLOCK_H
- #define _CLOCK_H
+ #ifndef _CLOCK_H_INCLUDED
+ #define _CLOCK_H_INCLUDED
 
 /* clock_init() */
 void clock_init();
@@ -18,3 +18,6 @@ void clock_init();
 
 
  #endif //_CLOCK_H
+
+ 
+/*************************** End of file ****************************/

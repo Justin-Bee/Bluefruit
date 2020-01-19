@@ -25,4 +25,7 @@ extern struct config_struct def;
 void config_init();
 
 
-#endif
+#endif //_CONFIG_H_INCLUDED
+
+
+/*************************** End of file ****************************/

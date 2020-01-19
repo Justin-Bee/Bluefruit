@@ -76,3 +76,7 @@ void led_off_blue(){
   /* turn off the led */
   NRF_GPIO->OUTCLR = (1UL << LEDPIN2);
 }
+
+
+
+/*************************** End of file ****************************/

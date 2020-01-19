@@ -24,3 +24,6 @@
    strcpy(def.device, device);
    strcpy(def.version, version);
  }
+
+ 
+/*************************** End of file ****************************/

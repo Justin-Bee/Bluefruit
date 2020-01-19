@@ -24,3 +24,7 @@ NRF_CLOCK_Type * CLOCK = 0x40000000;
     CLOCK->TASKS_HFCLKSTART = 1;
 
  }
+
+
+ 
+/*************************** End of file ****************************/

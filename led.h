@@ -8,8 +8,8 @@
  * the led.c class
  */
 
- #ifndef _LED_H
- #define _LED_H
+ #ifndef _LED_H_INCLUDED
+ #define _LED_H_INCLUDED
 
  /* led_init() */
  void led_init();
@@ -27,3 +27,6 @@ void led_on_blue();
 void led_off_blue();
 
  #endif /* _LED_H */
+
+ 
+/*************************** End of file ****************************/
