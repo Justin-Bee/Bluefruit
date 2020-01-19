@@ -85,6 +85,8 @@ int main(void) {
   uart_writestr("\r\n");
   uart_writestr(def.device);
   uart_writestr("\r\n");
+  uart_writestr(def.version);
+  uart_writestr("\r\n");  /*todo maybe write a function that handles this logic */
   /* endless loop */
   while (1){
     /* blink the leds */
