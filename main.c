@@ -54,6 +54,7 @@ Purpose : Generic application start
 #include "uart.h"
 #include "led.h"
 #include "clock.h"
+#include "bluetooth.h"
 
 /* external varaibles */
 struct config_struct def;
@@ -73,6 +74,7 @@ int main(void) {
   led_init();
   /* initialize the config */
   config_init();
+  /* initialize the bluetooth radio */
   
   /* for simple timer*/
   long volatile tmo;

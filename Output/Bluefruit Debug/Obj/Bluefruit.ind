@@ -6,6 +6,7 @@
 "Output/Bluefruit Debug/Obj/led.o"
 "Output/Bluefruit Debug/Obj/clock.o"
 "Output/Bluefruit Debug/Obj/config.o"
+"Output/Bluefruit Debug/Obj/bluetooth.o"
 "Output/Bluefruit Debug/Obj/thumb_crt0.o"
 "Output/Bluefruit Debug/Obj/ses_startup_nrf_common.o"
 "Output/Bluefruit Debug/Obj/ses_startup_nrf52.o"
