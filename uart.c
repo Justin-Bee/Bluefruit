@@ -107,7 +107,7 @@ void uart_writechar(char str){
     uart->EVENTS_RXDRDY = 1;
     while(!uart->EVENTS_RXDRDY){}
     /* store the first byte in the msg variable */
-    msg = "test";
+    uart->RXD;
    
 
     /* set received to 1 */

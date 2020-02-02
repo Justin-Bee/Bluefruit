@@ -6,4 +6,5 @@ Output/Bluefruit\ Debug/Obj/main.o: \
  /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/config.h \
  /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/uart.h \
  /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/led.h \
- /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/clock.h
+ /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/clock.h \
+ /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/bluetooth.h

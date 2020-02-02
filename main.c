@@ -75,6 +75,7 @@ int main(void) {
   /* initialize the config */
   config_init();
   /* initialize the bluetooth radio */
+  bluetooth_init();
   
   /* for simple timer*/
   long volatile tmo;
@@ -104,8 +105,9 @@ int main(void) {
       led_on_blue();
       tmo--;
       }
-
-    msg = uart_getstr();
+    
+    /* need to add interrupt */
+    //msg = uart_getstr();
 
     /* if the msg has been received */
     if(uart_msgReceived()){
