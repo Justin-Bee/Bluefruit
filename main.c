@@ -93,6 +93,7 @@ int main(void) {
   /* endless loop */
   while (1){
     /* blink the leds */
+    /* need to use interrupt timer instead of the loop */
     tmo = 1000000;
     while(tmo >0){
       led_on_red();
