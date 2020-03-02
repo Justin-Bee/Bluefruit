@@ -26,6 +26,12 @@ void led_on_blue();
 /* led_off_blue() */
 void led_off_blue();
 
+/* led_blink_red() */
+void led_toggle_red();
+
+/* led_blink_blue() */
+void led_toggle_blue();
+
  #endif /* _LED_H */
 
  
