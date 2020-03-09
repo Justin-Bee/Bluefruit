@@ -77,6 +77,34 @@ void led_off_blue(){
   NRF_GPIO->OUTCLR = (1UL << LEDPIN2);
 }
 
+/**
+ * led_toggle_red()
+ *
+ */
+void led_toggle_red(){
+  if(LEDPIN){
+    led_off_red();
+    }
+  else{
+    led_on_red();
+    }
+}
+
+/**
+ *led_toggle_blue()
+ *
+ */
+ void led_toggle_blue(){
+   if(LEDPIN2){
+     led_off_blue();
+     }
+   else{
+     led_on_blue();
+     }
+ }
+
+
+
 
 
 /*************************** End of file ****************************/
