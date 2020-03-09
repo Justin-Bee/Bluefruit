@@ -1,7 +1,9 @@
 <!DOCTYPE CrossStudio_Session_File>
 <session>
  <Bookmarks/>
- <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints">
+  <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
+ </Breakpoints>
  <ExecutionProfileWindow/>
  <FrameBufferWindow>
   <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
@@ -22,11 +24,9 @@
   <ProjectSessionItem path="Bluefruit"/>
   <ProjectSessionItem path="Bluefruit;Bluefruit"/>
   <ProjectSessionItem path="Bluefruit;Bluefruit;CMSIS Files"/>
-  <ProjectSessionItem path="Bluefruit;Bluefruit;RTT Files"/>
   <ProjectSessionItem path="Bluefruit;Bluefruit;Script Files"/>
   <ProjectSessionItem path="Bluefruit;Bluefruit;Source Files"/>
   <ProjectSessionItem path="Bluefruit;Bluefruit;System Files"/>
-  <SourceCodeControlLogin password="F9BB6682F5D56822" user="Justin-Bee &lt;jbee.appz@gmail.com>"/>
  </Project>
  <Register1>
   <RegisterWindow visibleNodes="CPU - Current Context/r0;CPU - Current Context/r1;CPU - Current Context/r2;CPU - Current Context/r3;CPU - Current Context/r4;CPU - Current Context/r5;CPU - Current Context/r6;CPU - Current Context/r7;CPU - Current Context/r8;CPU - Current Context/r9;CPU - Current Context/r10;CPU - Current Context/r11;CPU - Current Context/r12;CPU - Current Context/sp(r13);CPU - Current Context/lr(r14);CPU - Current Context/pc(r15);CPU - Current Context/apsr;CPU/r0;CPU/r1;CPU/r2;CPU/r3;CPU/r4;CPU/r5;CPU/r6;CPU/r7;CPU/r8;CPU/r9;CPU/r10;CPU/r11;CPU/r12;CPU/sp(r13);CPU/lr(r14);CPU/pc(r15);CPU/xpsr;CPU/msp;CPU/psp;CPU/cfbp;CPU/internal" binaryNodes="" asciiNodes="" openNodes="CPU - Current Context" name="Bluefruit" decimalNodes="" octalNodes="" unsignedNodes=""/>
@@ -47,10 +47,7 @@
   <Trace enabled="Yes"/>
  </TraceWindow>
  <Watch1>
-  <Watches active="1" update="Never">
-   <Watchpoint expression="def" name="def" radix="-1" linenumber="26" filename="config.h"/>
-   <Watchpoint expression="device" name="device" radix="16" linenumber="82" filename="main.c"/>
-  </Watches>
+  <Watches active="1" update="Never"/>
  </Watch1>
  <Watch2>
   <Watches active="0" update="Never"/>
@@ -62,18 +59,18 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="115" useTextEdit="1" useBinaryEdit="0" left="0" path="main.c" selected="0" top="94" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="70" y="137" useTextEdit="1" useBinaryEdit="0" left="0" path="uart.c" selected="0" top="132" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="25" y="11" useTextEdit="1" useBinaryEdit="0" left="0" path="uart.h" selected="0" top="6" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1011" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF/Device/Include/nrf52.h" selected="0" top="1002" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF/Device/Include/nrf.h" selected="0" top="18" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF/Device/Source/system_nrf52.c" selected="0" top="180" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="70" y="28" useTextEdit="1" useBinaryEdit="0" left="0" path="config.c" selected="1" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="70" y="30" useTextEdit="1" useBinaryEdit="0" left="0" path="config.h" selected="0" top="1" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="70" y="29" useTextEdit="1" useBinaryEdit="0" left="0" path="clock.c" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="70" y="81" useTextEdit="1" useBinaryEdit="0" left="0" path="led.c" selected="0" top="65" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="11" useTextEdit="1" useBinaryEdit="0" left="0" path="led.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="22" useTextEdit="1" useBinaryEdit="0" left="0" path="clock.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="4" y="99" useTextEdit="1" useBinaryEdit="0" left="0" path="main.c" selected="0" top="78" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="117" useTextEdit="1" useBinaryEdit="0" left="0" path="uart.c" selected="1" top="102" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF/Device/Include/nrf.h" selected="0" top="114" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="18" y="2300" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF/Device/Include/nrf52.h" selected="0" top="2283" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="13" useTextEdit="1" useBinaryEdit="0" left="0" path="bluetooth.c" selected="0" top="6" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="clock.c" selected="0" top="6" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="21" useTextEdit="1" useBinaryEdit="0" left="0" path="config.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="config.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="25" useTextEdit="1" useBinaryEdit="0" left="0" path="timer.c" selected="0" top="12" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="11" useTextEdit="1" useBinaryEdit="0" left="0" path="timer.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="32" useTextEdit="1" useBinaryEdit="0" left="0" path="led.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="led.c" selected="0" top="0" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="Bluefruit" fileDialogDefaultFilter="*.h" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="/home/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="Bluefruit" fileDialogDefaultFilter="*.asm;*.s;*.inc" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="/home/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit/main.c&#xa;&#xa;/home/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit/nRF/Device/Startup/ses_startup_nrf52.s&#xa;&#xa;/home/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit/nRF/Device/Startup/ses_startup_nrf_common.s&#xa;&#xa;/home/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit/SEGGER_RTT.c&#xa;&#xa;/home/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit/SEGGER_RTT_SES.c&#xa;&#xa;/home/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit/thumb_crt0.s&#xa;" fileDialogInitialDirectory="C:/Users/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

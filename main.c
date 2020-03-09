@@ -76,6 +76,7 @@ int main(void) {
   config_init();
   /* initialize the bluetooth radio */
   bluetooth_init();
+  /* initiailze the timer */
   
   /* for simple timer*/
   long volatile tmo;
@@ -92,23 +93,11 @@ int main(void) {
   uart_writestr("\r\n");  /*todo maybe write a function that handles this logic */
   /* endless loop */
   while (1){
-    /* blink the leds */
-    /* need to use interrupt timer instead of the loop */
-    tmo = 1000000;
-    while(tmo >0){
-      led_on_red();
-      led_off_blue();
-      tmo--;
-      }
-    tmo = 1000000;
-    while(tmo >0){
-      led_off_red();
-      led_on_blue();
-      tmo--;
-      }
+    
+      
     
     /* need to add interrupt */
-    //msg = uart_getstr();
+    msg = uart_getstr();
 
     /* if the msg has been received */
     if(uart_msgReceived()){
