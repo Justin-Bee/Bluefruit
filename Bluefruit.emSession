@@ -59,18 +59,18 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="4" y="99" useTextEdit="1" useBinaryEdit="0" left="0" path="main.c" selected="0" top="78" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="117" useTextEdit="1" useBinaryEdit="0" left="0" path="uart.c" selected="1" top="102" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="1" y="61" useTextEdit="1" useBinaryEdit="0" left="0" path="main.c" selected="0" top="42" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="117" useTextEdit="1" useBinaryEdit="0" left="0" path="uart.c" selected="0" top="3" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF/Device/Include/nrf.h" selected="0" top="114" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="18" y="2300" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF/Device/Include/nrf52.h" selected="0" top="2283" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="2300" useTextEdit="1" useBinaryEdit="0" left="0" path="nRF/Device/Include/nrf52.h" selected="0" top="2283" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="13" useTextEdit="1" useBinaryEdit="0" left="0" path="bluetooth.c" selected="0" top="6" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="clock.c" selected="0" top="6" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="21" useTextEdit="1" useBinaryEdit="0" left="0" path="config.c" selected="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="config.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="25" useTextEdit="1" useBinaryEdit="0" left="0" path="timer.c" selected="0" top="12" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="25" useTextEdit="1" useBinaryEdit="0" left="0" path="timer.c" selected="0" top="9" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="11" useTextEdit="1" useBinaryEdit="0" left="0" path="timer.h" selected="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="32" useTextEdit="1" useBinaryEdit="0" left="0" path="led.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="led.c" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="41" y="23" useTextEdit="1" useBinaryEdit="0" left="0" path="led.c" selected="1" top="3" codecName="Default"/>
  </Files>
  <ARMCrossStudioWindow activeProject="Bluefruit" fileDialogDefaultFilter="*.asm;*.s;*.inc" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="/home/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit/main.c&#xa;&#xa;/home/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit/nRF/Device/Startup/ses_startup_nrf52.s&#xa;&#xa;/home/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit/nRF/Device/Startup/ses_startup_nrf_common.s&#xa;&#xa;/home/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit/SEGGER_RTT.c&#xa;&#xa;/home/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit/SEGGER_RTT_SES.c&#xa;&#xa;/home/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit/thumb_crt0.s&#xa;" fileDialogInitialDirectory="C:/Users/jbee/Documents/SEGGER Embedded Studio for ARM Projects/Bluefruit" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
