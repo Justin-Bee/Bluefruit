@@ -40,3 +40,7 @@ void timerInterrupt(void){
   led_toggle_red();
   /* reset the timer */
 }
+
+//https://github.com/andenore/NordicSnippets/blob/master/examples/timer/main.c 
+
+/*************************** End of file ****************************/
