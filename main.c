@@ -55,6 +55,7 @@ Purpose : Generic application start
 #include "led.h"
 #include "clock.h"
 #include "bluetooth.h"
+#include "timer.h"
 
 /* external varaibles */
 struct config_struct def;
@@ -77,7 +78,7 @@ int main(void) {
   /* initialize the bluetooth radio */
   bluetooth_init();
   /* initiailze the timer */
-  
+  timer_init();
   /* for simple timer*/
   long volatile tmo;
   
@@ -93,8 +94,6 @@ int main(void) {
   uart_writestr("\r\n");  /*todo maybe write a function that handles this logic */
   /* endless loop */
   while (1){
-    
-      
     
     /* need to add interrupt */
     msg = uart_getstr();
