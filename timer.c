@@ -12,6 +12,7 @@
 #include "nrf52.h"
 #include "nrf.h"
 #include "led.h"
+#include "uart.h"
 
 /* definitions */
 NRF_TIMER_Type *timer0 = NRF_TIMER0_BASE;
@@ -49,6 +50,7 @@ void TIMER0_IRQHandler(void)
   {
     NRF_TIMER0->EVENTS_COMPARE[0] = 0;
     toggle_led_red();
+    uart_writestr("Interrupt is working!");
     // Read back event register so ensure we have cleared it before exiting IRQ handler.
     dummy = NRF_TIMER0->EVENTS_COMPARE[0];
     dummy; // to get rid of set but not used warning
