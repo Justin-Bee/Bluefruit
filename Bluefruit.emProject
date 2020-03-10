@@ -67,6 +67,8 @@
       <file file_name="config.c" />
       <file file_name="bluetooth.c" />
       <file file_name="bluetooth.h" />
+      <file file_name="timer.h" />
+      <file file_name="timer.c" />
     </folder>
     <folder Name="System Files">
       <file file_name="thumb_crt0.s" />
