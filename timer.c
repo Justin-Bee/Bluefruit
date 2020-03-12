@@ -53,7 +53,7 @@ void TIMER0_IRQHandler(void)
   if (NRF_TIMER0->EVENTS_COMPARE[0] == 1)
   {
     NRF_TIMER0->EVENTS_COMPARE[0] = 0;
-    led_toggle_red();
+    led_toggle_red(); //not working so far
     uart_writestr("Int!");
     // Read back event register so ensure we have cleared it before exiting IRQ handler.
     dummy = NRF_TIMER0->EVENTS_COMPARE[0];

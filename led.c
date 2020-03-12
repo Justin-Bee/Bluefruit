@@ -82,7 +82,7 @@ void led_off_blue(){
  *
  */
 void led_toggle_red(){
-  if(LEDPIN){
+  if(NRF_GPIO->DETECTMODE == 1){ //try this TODO 
     led_off_red();
     }
   else{
