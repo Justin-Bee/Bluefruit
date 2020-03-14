@@ -9,6 +9,7 @@
  /* includes */
 #include "led.h"
 #include "nrf.h"
+#include "nrf_gpio.h"
 
 /* defines */
 #define LEDPIN (17UL)
@@ -80,9 +81,12 @@ void led_off_blue(){
 /**
  * led_toggle_red()
  *
+ * Notes: Uses nrf_gpio_read() to read the status of the pin
+ * if the pin is set then turn off the led, else turn on the led
+ *
  */
 void led_toggle_red(){
-  if(NRF_GPIO->DETECTMODE == 1){ //try this TODO 
+  if(nrf_gpio_pin_read(LEDPIN)){ //try this TODO 
     led_off_red();
     }
   else{
@@ -95,7 +99,7 @@ void led_toggle_red(){
  *
  */
  void led_toggle_blue(){
-   if(LEDPIN2){
+   if(nrf_gpio_pin_read(LEDPIN2)){
      led_off_blue();
      }
    else{

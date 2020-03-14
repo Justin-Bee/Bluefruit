@@ -42,6 +42,7 @@
           default_code_section=".init"
           default_const_section=".init_rodata" />
       </file>
+      <file file_name="nrf_gpio.h" />
     </folder>
     <folder Name="RTT Files">
       <file file_name="SEGGER_RTT.c" />

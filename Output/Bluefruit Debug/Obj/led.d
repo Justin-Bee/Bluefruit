@@ -14,4 +14,6 @@ Output/Bluefruit\ Debug/Obj/led.o: \
  /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/nRF/Device/Include/nrf52_bitfields.h \
  /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/nRF/Device/Include/nrf51_to_nrf52.h \
  /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/nRF/Device/Include/nrf52_name_change.h \
- /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/nRF/Device/Include/compiler_abstraction.h
+ /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/nRF/Device/Include/compiler_abstraction.h \
+ /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/nrf_gpio.h \
+ /usr/share/segger_embedded_studio_for_arm_4.30c/include/stdbool.h
