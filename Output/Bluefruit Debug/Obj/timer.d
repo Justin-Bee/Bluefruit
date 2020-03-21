@@ -16,5 +16,4 @@ Output/Bluefruit\ Debug/Obj/timer.o: \
  /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/nRF/Device/Include/nrf51_to_nrf52.h \
  /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/nRF/Device/Include/nrf52_name_change.h \
  /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/nRF/Device/Include/compiler_abstraction.h \
- /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/led.h \
- /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/uart.h
+ /home/jbee/Documents/SEGGER\ Embedded\ Studio\ for\ ARM\ Projects/Bluefruit/led.h

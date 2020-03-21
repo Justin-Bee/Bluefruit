@@ -50,6 +50,8 @@ int received =0;
    // uart->CONFIG = 0x07;
     /* set the baudrate to 115200 */
     uart->BAUDRATE = 0x01D7E000UL;
+    /* trigger the receive message event */
+    uart->TASKS_STARTRX=1;
  
  }
 
@@ -99,22 +101,22 @@ void uart_writechar(char str){
  unsigned char * uart_getstr(){
     /* buffer for the message */
     unsigned char * msg;
-    /* trigger the receive message event */
-    uart->TASKS_STARTRX=1;
     /* variable to increment */
-    int i=0;
-
-    uart->EVENTS_RXDRDY = 1;
+   // int i=0;
+   // uart->EVENTS_RXDRDY = 1;
     while(!uart->EVENTS_RXDRDY){}
-    /* store the first byte in the msg variable */
-    uart->RXD;
-   
-
-    /* set received to 1 */
-    received = 1;
-    /* return the message */
+    /* EVENTS_RXDRDY must be cleared before RXD is read */
+    //uart->EVENTS_RXDRDY=0;
+      /* store the first byte in the msg variable */
+    msg = uart->RXD;
+   // while(msg != '\n'){
+  //    while(!uart->EVENTS_RXDRDY){}
+      /* EVENTS_RXDRDY must be cleared before RXD is read */
+     // uart->EVENTS_RXDRDY=0;
+      /* store the first byte in the msg variable */
+   //   msg += uart->RXD;
+  //  }
     return msg;
-
  }
 
 

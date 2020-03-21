@@ -96,14 +96,14 @@ int main(void) {
   uart_writestr("\r\n");  /*todo maybe write a function that handles this logic */
   /* endless loop */
   while (1){
-    __WFE();
+   // __WFE();
     /* need to add interrupt */
-   // msg = uart_getstr();
+    msg = uart_getstr();
 
     /* if the msg has been received */
    // if(uart_msgReceived()){
     //  uart_writestr("you entered: ");
-    //  uart_writestr(msg);
+        uart_writestr(msg);
    // }
 
   }
